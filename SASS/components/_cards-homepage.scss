@@ -1,0 +1,56 @@
+@use '../_mixins' as *;
+@use '../_variables' as *;
+
+.restaurants-container {
+  padding: 20px;
+  .restaurants-cards {
+    @include displayflexcolumn();
+    gap: 20px;
+    a {
+      text-decoration: none;
+      color: inherit;
+      .cards {
+        @include displayflexcolumn();
+        background-color: $white-color;
+        border-radius: 20px;
+        .cards-photo {
+          position: relative;
+          img {
+            object-fit: cover;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+.cards-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  .cards-txt {
+    h3 {
+      margin-block-end: 0.3em;
+    }
+    p {
+      margin-block-start: 0;
+    }
+  }
+}
+
+.badge {
+  text-align: center;
+  color: #008766;
+  background-color: $third-color;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border-radius: 5px;
+}

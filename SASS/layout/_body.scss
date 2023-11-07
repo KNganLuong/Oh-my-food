@@ -1,0 +1,76 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+body {
+  margin: 0;
+  background-color: $light-grey-color;
+  @include displayflexcolumn();
+
+  .loading-containeur {
+    animation: disappear 1s 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    .loadingHomePage {
+      border: 10px dashed $main-color;
+      border-top-color: $second-color;
+      border-bottom-color: $second-color;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      animation: loading;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      @include displayflex();
+      @include itemcenter();
+      span {
+        font-weight: bold;
+        background: -webkit-linear-gradient(
+          $main-color,
+          $second-color,
+          $third-color
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .homePage {
+    opacity: 0;
+    animation: startHomePage 1s 3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes startHomePage {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

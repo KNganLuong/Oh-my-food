@@ -1,5 +1,17 @@
+@use 'layout/body' as *;
+@use 'layout/header' as *;
+@use 'layout/footer' as *;
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'components/cards-homepage' as *;
+@use 'components/buttons' as *;
+
+//@use ""
+
 //  Général
-* { font-family: 'Roboto', sans-serif;
+
+* {
+  font-family: 'Roboto', sans-serif;
 }
 
 img {
@@ -7,3 +19,62 @@ img {
   height: 231px;
 }
 
+// LOCATION
+
+.location-container {
+  background-color: #eaeaea;
+  gap: 17px;
+  font-weight: bold;
+  @include displayflex();
+  padding: 15px;
+}
+
+// SEARCH-CONTAINER
+.search-container {
+  @include displayflex();
+  @include itemcenter();
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+// FONCTIONNEMENT-CONTAINER
+.fonctionnement-container {
+  padding: 20px;
+  background-color: $white-color;
+
+  .fonctionnement-cards {
+    @include displayflex();
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+
+    .fonctionnement-content {
+      @include section-shadow();
+      @include section-border();
+      @include section-font-bold();
+      @include displayflex();
+      @include itemcenter();
+      gap: 30px;
+      padding: 30px;
+      .fa-solid {
+        color: $icon-color;
+      }
+      &:hover > .fa-solid {
+        color: $main-color;
+    }
+    .fonctionnement-step {
+      border-radius: 50%;
+      background-color: $main-color;
+      color: $white-color;
+      height: 24px;
+      width: 24px;
+      position: relative;
+      right: 25%;
+      @include displayflex();
+      @include itemcenter();
+      font-weight: normal;
+    }
+  }
+}
+}
