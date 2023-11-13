@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use 'variables.scss' as *;
 
 @mixin displayflex {
   display: flex;
@@ -27,4 +27,10 @@
 
 @mixin section-font-bold {
   font-weight: bold;
+}
+
+@mixin media-queries($type) {
+  @media screen and (min-width: $type) {
+    @content;
+  }
 }

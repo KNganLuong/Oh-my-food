@@ -1,0 +1,39 @@
+@use '../components/buttons' as *;
+@use '../utils/mixins' as *;
+@use '../utils/variables' as *;
+
+footer {
+  background-color: $dark-grey-color;
+  padding: 20px;
+  @include media-queries($desktop) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+
+  img {
+    filter: invert(100%);
+    height: 27px;
+    width: 139px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .footer-links {
+    gap: 20px;
+    @include displayflexcolumn();
+    @include media-queries($desktop) {
+      flex-direction: row;
+    }
+
+    a {
+      text-decoration: none;
+      color: $white-color;
+    }
+
+    i {
+      padding-right: 10px;
+    }
+  }
+}

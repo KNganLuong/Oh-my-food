@@ -1,0 +1,36 @@
+@use '../components/homepage.scss/cards-homepage.scss';
+@use '../components/homepage.scss/fonctionnement.scss';
+@use '../components/homepage.scss/location.scss';
+@use '../components/homepage.scss/search.scss';
+
+@use '../components/menu.scss/cards-menu.scss';
+
+@use '../components/base' as *;
+@use '../components/buttons' as *;
+
+@use '../layout/body.scss';
+@use '../layout/footer.scss';
+@use '../layout/header.scss';
+
+@use '../utils/keyframes' as *;
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+main img {
+  width: 100%;
+  height: 100%;
+}
+
+// HEADER
+header {
+  display: grid;
+  grid-template-columns: 33% 34% 33%;
+  align-items: center;
+  div {
+    @include displayflex();
+  }
+}
+
+main {
+  background-color: $light-grey-color;
+}

@@ -1,0 +1,11 @@
+@use '../buttons' as *;
+@use '../../utils/variables' as *;
+@use '../../utils/mixins' as *;
+
+.location-container {
+  background-color: #eaeaea;
+  gap: 17px;
+  font-weight: bold;
+  @include displayflex();
+  padding: 15px;
+}

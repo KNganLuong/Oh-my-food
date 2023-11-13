@@ -1,0 +1,55 @@
+@use '../buttons' as *;
+@use '../../utils/variables' as *;
+@use '../../utils/mixins' as *;
+
+.fonctionnement-container {
+  padding: 20px;
+  background-color: $white-color;
+
+  .fonctionnement-cards {
+    @include displayflex();
+    flex-direction: column;
+    gap: 20px;
+    @include media-queries($desktop) {
+      flex-direction: row;
+    }
+
+    .fonctionnement-content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      .fonctionnement-step {
+        border-radius: 50%;
+        background-color: $main-color;
+        color: $white-color;
+        height: 24px;
+        width: 24px;
+        @include displayflex();
+        @include itemcenter();
+        font-weight: normal;
+        position: relative;
+        left: 12px;
+      }
+
+      .fonctionnement-content-detail {
+        @include section-shadow();
+        @include section-border();
+        @include section-font-bold();
+        @include displayflex();
+        align-items: center;
+        gap: 30px;
+        height: 73px;
+        width: 100%;
+
+        .fa-solid {
+          color: $icon-color;
+          padding-left: 15px;
+        }
+        &:hover > .fa-solid {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

@@ -1,15 +1,20 @@
-@use '../mixins' as *;
-@use '../variables' as *;
+@use '../components/buttons' as *;
+@use '../utils/mixins' as *;
+@use '../utils/variables' as *;
+@use '../utils/keyframes' as *;
 
 body {
   margin: 0;
   background-color: $light-grey-color;
-  @include displayflexcolumn();
 
   .loading-containeur {
-    animation: disappear 1s 2s;
+    @include displayflex();
+    @include itemcenter();
+
+    animation: disappear 0s 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
+
     .loadingHomePage {
       border: 10px dashed $main-color;
       border-top-color: $second-color;
@@ -17,8 +22,7 @@ body {
       border-radius: 50%;
       width: 100px;
       height: 100px;
-      animation: loading;
-      animation-duration: 2s;
+      animation: loading 1.5s 1s;
       animation-timing-function: linear;
       @include displayflex();
       @include itemcenter();
@@ -40,37 +44,5 @@ body {
     animation: startHomePage 1s 3s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-  }
-}
-
-@keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    height: 0;
-  }
-}
-
-@keyframes loading {
-  0% {
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes startHomePage {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
   }
 }

@@ -1,0 +1,74 @@
+@use 'variables' as *;
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    height: 900px;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes startHomePage {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(1);
+    background-image: linear-gradient(to top, $second-color, $main-color);
+    -webkit-text-stroke-color: $white-color;
+  }
+  50% {
+    transform: scale(1.2);
+    background-image: linear-gradient(to top, $second-color, $main-color);
+    -webkit-text-stroke-color: $white-color;
+  }
+  100% {
+    transform: scale(1);
+    background-image: linear-gradient(to top, $second-color, $main-color);
+    -webkit-text-stroke-color: $white-color;
+  }
+}
+
+@keyframes flip-in {
+  to {
+    width: 70px;
+    opacity: 1;
+  }
+}
+
+@keyframes flip-out {
+  from {
+    width: 70px;
+    opacity: 1;
+  }
+  to {
+    width: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,134 @@
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    height: 900px;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes startHomePage {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes heart {
+  0% {
+    transform: scale(1);
+    background-image: linear-gradient(to top, #ff79da, #9356dc);
+    -webkit-text-stroke-color: #ffffff;
+  }
+  50% {
+    transform: scale(1.2);
+    background-image: linear-gradient(to top, #ff79da, #9356dc);
+    -webkit-text-stroke-color: #ffffff;
+  }
+  100% {
+    transform: scale(1);
+    background-image: linear-gradient(to top, #ff79da, #9356dc);
+    -webkit-text-stroke-color: #ffffff;
+  }
+}
+@keyframes flip-in {
+  to {
+    width: 70px;
+    opacity: 1;
+  }
+}
+@keyframes flip-out {
+  from {
+    width: 70px;
+    opacity: 1;
+  }
+  to {
+    width: 0px;
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+.button {
+  text-decoration: none;
+  background: linear-gradient(to right bottom, #ff79da, #9356dc);
+  border-radius: 30px;
+  padding: 20px;
+  color: white;
+  border: 0px solid #9356dc;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  margin: 20px;
+  transition-property: transform, box-shadow, opacity;
+  transition-duration: 1s;
+}
+.button:hover {
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.cards-icon {
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000000;
+}
+.cards-icon:hover {
+  animation-name: heart;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+body {
+  margin: 0;
+  background-color: #f6f6f6;
+}
+body .loading-containeur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: disappear 0s 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+body .loading-containeur .loadingHomePage {
+  border: 10px dashed #9356dc;
+  border-top-color: #ff79da;
+  border-bottom-color: #ff79da;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: loading 1.5s 1s;
+  animation-timing-function: linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body .loading-containeur .loadingHomePage span {
+  font-weight: bold;
+  background: -webkit-linear-gradient(#9356dc, #ff79da, #99e2d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body .homePage {
+  opacity: 0;
+  animation: startHomePage 1s 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}/*# sourceMappingURL=body.css.map */
