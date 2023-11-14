@@ -112,6 +112,11 @@ footer img {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+@media screen and (min-width: 1024px) {
+  footer img {
+    padding-left: 50px;
+  }
+}
 footer .footer-links {
   gap: 20px;
   display: flex;

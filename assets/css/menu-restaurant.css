@@ -251,19 +251,33 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+@media screen and (min-width: 1024px) {
+  .menu-container {
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-left: 200px;
+    margin-right: 200px;
+    bottom: 30px;
+  }
+}
 .menu-container .menu-title {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  justify-content: space-between;
+}
+@media screen and (min-width: 1024px) {
+  .menu-container .menu-title {
+    justify-content: center;
+    gap: 20px;
+  }
 }
 .menu-container .menu-title h1 {
   font-family: "Shrikhand", sans-serif;
   margin-block-end: 0;
   font-weight: 400;
 }
-.menu-container .menu-title i {
+.menu-container .menu-title .cards-icon {
   margin-block-start: 0.83em;
   padding-right: 30px;
 }
@@ -278,6 +292,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  gap: 15px;
 }
 .menu-container .menu-cards .menu-content h2 {
   margin-block-start: 0;
@@ -289,54 +304,49 @@
 }
 .menu-container .menu-cards .menu-content .menu-content-item {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: 12px;
-}
-.menu-container .menu-cards .menu-content .menu-content-item .menu-item {
-  height: 70px;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
+  height: 70px;
   background-color: #ffffff;
   border-radius: 15px;
   cursor: pointer;
   animation: appear 3s ease-in-out 0.5s forwards;
   opacity: 0;
 }
-.menu-container .menu-cards .menu-content .menu-content-item .menu-item:hover > .menu-item-add {
+.menu-container .menu-cards .menu-content .menu-content-item:hover > .menu-item .menu-item-add {
   animation: flip-in 0.8s ease-in-out both;
 }
-.menu-container .menu-cards .menu-content .menu-content-item .menu-item .menu-item-detail {
-  width: 100%;
+.menu-container .menu-cards .menu-content .menu-content-item .menu-content-detail {
+  width: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 5px;
   padding: 0.7em;
 }
-.menu-container .menu-cards .menu-content .menu-content-item .menu-item .menu-item-detail h3 {
+.menu-container .menu-cards .menu-content .menu-content-item .menu-content-detail h3 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
-.menu-container .menu-cards .menu-content .menu-content-item .menu-item .menu-item-detail .menu-txt {
-  display: flex;
-  justify-content: center;
-  justify-content: space-between;
-}
-.menu-container .menu-cards .menu-content .menu-content-item .menu-item .menu-item-detail .menu-txt .menu-subtitle {
+.menu-container .menu-cards .menu-content .menu-content-item .menu-content-detail .menu-subtitle {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menu-container .menu-cards .menu-content .menu-content-item .menu-item .menu-item-detail .menu-txt .menu-price {
-  font-weight: bold;
-  white-space: nowrap;
+.menu-container .menu-cards .menu-content .menu-content-item .menu-item {
+  display: flex;
+  gap: 0.7em;
 }
-.menu-container .menu-cards .menu-content .menu-content-item .menu-item-add {
+.menu-container .menu-cards .menu-content .menu-content-item .menu-item .menu-price {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  padding-bottom: 0.7em;
+  font-weight: bold;
+}
+.menu-container .menu-cards .menu-content .menu-content-item .menu-item .menu-item-add {
   opacity: 0;
   width: 0px;
   height: 70px;
@@ -349,7 +359,7 @@
   text-align: center;
   animation: flip-out 0.8s ease-in-out both;
 }
-.menu-container .menu-cards .menu-content .menu-content-item .menu-item-add .fa-check {
+.menu-container .menu-cards .menu-content .menu-content-item .menu-item .menu-item-add .fa-check {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -363,7 +373,6 @@
 .menu-container .button {
   width: 186px;
   text-align: center;
-  margin-block-end: 0;
 }
 
 * {
@@ -380,7 +389,6 @@ body {
   background-color: #f6f6f6;
 }
 body .loading-containeur {
-  height: 960px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -435,6 +443,11 @@ footer img {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+@media screen and (min-width: 1024px) {
+  footer img {
+    padding-left: 50px;
+  }
+}
 footer .footer-links {
   gap: 20px;
   display: flex;
@@ -477,7 +490,14 @@ header img {
 
 main img {
   width: 100%;
-  height: 100%;
+  height: 275px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  main img {
+    height: 383px;
+  }
 }
 
 header {
@@ -491,5 +511,5 @@ header div {
 }
 
 main {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
 }/*# sourceMappingURL=menu-restaurant.css.map */

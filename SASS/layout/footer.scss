@@ -18,6 +18,9 @@ footer {
     width: 139px;
     padding-top: 20px;
     padding-bottom: 20px;
+    @include media-queries($desktop) {
+      padding-left: 50px;
+    }
   }
 
   .footer-links {

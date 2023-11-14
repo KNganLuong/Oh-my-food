@@ -15,11 +15,22 @@
   padding-left: 20px;
   padding-right: 20px;
 
+  @include media-queries($desktop) {
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-left: 200px;
+    margin-right: 200px;
+    bottom: 30px;
+  }
   .menu-title {
-    @include displayflex();
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    justify-content: space-between;
+    @include media-queries($desktop) {
+      justify-content: center;
+      gap: 20px;
+    }
 
     h1 {
       font-family: 'Shrikhand', sans-serif;
@@ -27,7 +38,7 @@
       font-weight: 400;
     }
 
-    i {
+    .cards-icon {
       margin-block-start: 0.83em;
       padding-right: 30px;
     }
@@ -40,6 +51,7 @@
 
     .menu-content {
       @include displayflexcolumn();
+      gap: 15px;
 
       h2 {
         margin-block-start: 0;
@@ -51,72 +63,70 @@
       }
 
       .menu-content-item {
-        @include displayflexcolumn();
-        gap: 12px;
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        background-color: $white-color;
+        border-radius: 15px;
+        cursor: pointer;
+        animation: appear 3s ease-in-out 0.5s forwards;
+        opacity: 0;
 
-        .menu-item {
-          height: 70px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          background-color: $white-color;
-          border-radius: 15px;
-          cursor: pointer;
-          animation: appear 3s ease-in-out 0.5s forwards;
-          opacity: 0;
+        &:hover > .menu-item .menu-item-add {
+          animation: flip-in 0.8s ease-in-out both;
+        }
 
-          &:hover > .menu-item-add {
-            animation: flip-in 0.8s ease-in-out both;
+        .menu-content-detail {
+          width: 50%;
+          @include displayflexcolumn();
+          gap: 5px;
+          padding: 0.7em;
+
+          h3 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-block-start: 0em;
+            margin-block-end: 0em;
           }
 
-          .menu-item-detail {
-            width: 100%;
-            @include displayflexcolumn();
-            gap: 5px;
-            padding: 0.7em;
-
-            h3 {
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-              margin-block-start: 0em;
-              margin-block-end: 0em;
-            }
-
-            .menu-txt {
-              @include displayflex();
-              justify-content: space-between;
-              .menu-subtitle {
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-              }
-              .menu-price {
-                font-weight: bold;
-                white-space: nowrap;
-              }
-            }
+          .menu-subtitle {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
           }
         }
-        .menu-item-add {
-          opacity: 0;
-          width: 0px;
-          height: 70px;
-          border-top-right-radius: 15px;
-          border-bottom-right-radius: 15px;
-          background-color: $third-color;
-          @include displayflex();
-          @include itemcenter();
-          animation: flip-out 0.8s ease-in-out both;
+        .menu-item {
+          display: flex;
+          gap: 0.7em;
+          .menu-price {
+            display: flex;
+            justify-content: end;
+            align-items: flex-end;
+            padding-bottom: 0.7em;
+            font-weight: bold;
+          }
 
-          .fa-check {
+          .menu-item-add {
+            opacity: 0;
+            width: 0px;
+            height: 70px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background-color: $third-color;
             @include displayflex();
             @include itemcenter();
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            background-color: $white-color;
-            color: $third-color;
+            animation: flip-out 0.8s ease-in-out both;
+
+            .fa-check {
+              @include displayflex();
+              @include itemcenter();
+              border-radius: 50%;
+              width: 22px;
+              height: 22px;
+              background-color: $white-color;
+              color: $third-color;
+            }
           }
         }
       }
@@ -126,6 +136,5 @@
   .button {
     width: 186px;
     text-align: center;
-    margin-block-end: 0;
   }
 }
