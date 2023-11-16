@@ -34,16 +34,19 @@
 @keyframes heart {
   0% {
     transform: scale(1);
+    opacity: 0.5;
     background-image: linear-gradient(to top, $second-color, $main-color);
     -webkit-text-stroke-color: $white-color;
   }
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    opacity: 0.8;
     background-image: linear-gradient(to top, $second-color, $main-color);
     -webkit-text-stroke-color: $white-color;
   }
   100% {
-    transform: scale(1);
+    transform: scale(1.2);
+    opacity: 1;
     background-image: linear-gradient(to top, $second-color, $main-color);
     -webkit-text-stroke-color: $white-color;
   }
